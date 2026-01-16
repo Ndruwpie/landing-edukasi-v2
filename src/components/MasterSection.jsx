@@ -53,7 +53,7 @@ const teachers = [
 
 function CheckItem({ children }) {
     return (
-        <li className="flex gap-3 leading-relaxed text-[13px] text-black/95">
+        <li className="flex gap-3 leading-relaxed text-[13px] text-white/95">
             <span className="mt-[2px] inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/95 text-slate-800 shadow">
                 ✓
             </span>
@@ -247,14 +247,14 @@ export default function MasterTeacherSection() {
 
                                     <div className="relative">
                                         <div className="text-center">
-                                            <div className="text-lg font-extrabold text-black">{t.name}</div>
-                                            <div className="mt-1 text-sm font-semibold text-black/90">
+                                            <div className="text-lg font-extrabold text-white">{t.name}</div>
+                                            <div className="mt-1 text-sm font-semibold text-white/90">
                                                 {t.title}
                                             </div>
                                             <div className="mx-auto mt-4 h-px w-4/5 border-t border-dashed border-white/60" />
                                         </div>
 
-                                        <div className="mt-4 font-semibold text-[12px] text-black/90">
+                                        <div className="mt-4 font-semibold text-[17px] text-white">
                                             Pengalaman dan prestasi
                                         </div>
 
