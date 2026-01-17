@@ -245,7 +245,7 @@ export default function PaymentPage() {
             <div className="pointer-events-none absolute inset-0">
                 {/* kanan */}
                 <div
-                    className="bottom-[-120px] absolute -right-2 h-[420px] w-[420px] rounded-full bg-[#BFF2E2] opacity-95"
+                    className="bottom-[-120px] bg-[#93C5f0]/55 absolute -right-2 h-[420px] w-[420px] rounded-full opacity-95"
                     style={decorStyleRight(1)}
                 />
 
@@ -377,7 +377,7 @@ export default function PaymentPage() {
                                         />
                                     </div>
 
-                                    <div className="mt-6 rounded-2xl bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] p-4 ring-1 ring-white/70">
+                                    <div className="mt-6 rounded-2xl bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 p-4 ring-1 ring-white/70">
                                         <div className="text-sm font-semibold text-slate-800">
                                             Kursus sertifikasi yang kamu pilih
                                         </div>
@@ -447,7 +447,7 @@ export default function PaymentPage() {
                                         </div>
                                     </div>
 
-                                    <div className="mt-4 flex items-center justify-between rounded-xl bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] px-4 py-3 text-black">
+                                    <div className="mt-4 flex items-center justify-between rounded-xl bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 px-4 py-3 text-black">
                                         <span className="text-md font-semibold">Total
                                         </span>
                                         <span className="text-md font-extrabold">{course.price || rupiah(total)}</span>
@@ -461,7 +461,7 @@ export default function PaymentPage() {
                                 <button
                                     type="button"
                                     onClick={onPay}
-                                    className="mt-5 w-full rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-emerald-300 px-6 py-3 text-sm font-extrabold text-black hover:bg-black-80"
+                                    className="mt-5 w-full rounded-xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-800 px-6 py-3 text-sm font-extrabold text-white hover:bg-black-80"
                                 >
                                     Bayar
                                 </button>

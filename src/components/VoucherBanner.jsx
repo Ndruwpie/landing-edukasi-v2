@@ -1,6 +1,8 @@
 ﻿export default function VoucherBanner() {
     return (
+
         <div className="mx-auto max-w-6xl px-4">
+
             <div
                 className="
           flex flex-col items-center justify-between gap-4

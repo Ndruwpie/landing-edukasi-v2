@@ -2,12 +2,17 @@
 
 const clamp01 = (v) => Math.max(0, Math.min(1, v));
 
+// ====== FOTO LOKAL (src/assets/teachers) ======
+import ditaPhoto from "../assets/teachers/dita.jpg";
+import dimasPhoto from "../assets/teachers/dimas.jpg";
+import dillanPhoto from "../assets/teachers/dillan.jpg";
+import naylaPhoto from "../assets/teachers/nayla.jpg";
+
 const teachers = [
     {
         name: "Dita",
         title: "Master Teacher Geografi",
-        photo:
-            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+        photo: ditaPhoto,
         points: [
             "S2 Manajemen Bencana Universitas Pertahanan",
             "S1 Pendidikan Geografi Universitas Negeri Jakarta",
@@ -18,8 +23,7 @@ const teachers = [
     {
         name: "Dimas",
         title: "Master Teacher Fisika",
-        photo:
-            "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80",
+        photo: dimasPhoto,
         points: [
             "S1 Pendidikan Fisika UNJ",
             "Teacher of Physics Olympiad 2013 - present",
@@ -30,8 +34,7 @@ const teachers = [
     {
         name: "Dillan",
         title: "Master Teacher Bahasa Inggris",
-        photo:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+        photo: dillanPhoto,
         points: [
             "S1 Pendidikan Bahasa Inggris UIN Jakarta",
             "The Best Graduate of English Education Department at 104th Graduation",
@@ -41,8 +44,7 @@ const teachers = [
     {
         name: "Nayla",
         title: "Master Teacher Matematika",
-        photo:
-            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+        photo: naylaPhoto,
         points: [
             "S1 Pendidikan Matematika",
             "Pengajar Olimpiade Matematika",
@@ -141,27 +143,15 @@ export default function MasterTeacherSection() {
             const rect = el.getBoundingClientRect();
             const vh = window.innerHeight || 800;
 
-            /**
-             * ENTER (slide up):
-             * mulai anim ketika top section masih di bawah viewport,
-             * dan selesai ketika top sudah mendekati area atas.
-             */
-            const ENTER_START = vh * 0.85; // mulai saat top berada di 85% tinggi viewport (mau masuk)
-            const ENTER_RANGE = vh * 0.35; // durasi anim
+            const ENTER_START = vh * 0.85;
+            const ENTER_RANGE = vh * 0.35;
             const enterRaw = (ENTER_START - rect.top) / ENTER_RANGE;
-            const e = clamp01(enterRaw);
-            setEnterP(e);
+            setEnterP(clamp01(enterRaw));
 
-            /**
-             * EXIT (opacity makin tebal):
-             * mulai ketika section sudah hampir keluar (bottom mendekati top),
-             * makin tebal ketika bottom naik ke atas.
-             */
-            const EXIT_START = vh * 0.35; // mulai ketika rect.bottom < 35% viewport (mau keluar)
+            const EXIT_START = vh * 0.35;
             const EXIT_RANGE = vh * 0.35;
             const exitRaw = (EXIT_START - rect.bottom) / EXIT_RANGE;
-            const x = clamp01(exitRaw);
-            setExitP(x);
+            setExitP(clamp01(exitRaw));
         };
 
         onScroll();
@@ -197,15 +187,15 @@ export default function MasterTeacherSection() {
             {/* decor (anim masuk/keluar) */}
             <div className="pointer-events-none absolute inset-0">
                 <div
-                    className="absolute -left-16 top-20 h-[360px] w-[360px] rounded-full border-4 border-dashed border-cyan-200"
+                    className="absolute -left-16 top-20 h-[360px] w-[360px] rounded-full border-4 border-dashed border-blue-200"
                     style={decorStyleLeft(1)}
                 />
                 <div
-                    className="absolute -right-44 -top-40 h-[520px] w-[520px] rounded-full bg-cyan-100/60"
+                    className="bg-[#93c5f9]/45 absolute -right-64 -top-40 h-[520px] w-[520px] rounded-full"
                     style={decorStyleRight(1)}
                 />
                 <div
-                    className="absolute -right-56 top-44 h-[520px] w-[520px] rounded-full bg-sky-100/70"
+                    className="bg-[#93C5FD]/25 absolute -right-56 top-44 h-[520px] w-[520px] rounded-full"
                     style={decorStyleRight(0.8)}
                 />
             </div>
@@ -218,8 +208,6 @@ export default function MasterTeacherSection() {
                 </div>
 
                 <div className="relative">
-                    
-
                     {/* scroller */}
                     <div
                         ref={scrollerRef}
@@ -234,11 +222,17 @@ export default function MasterTeacherSection() {
                             >
                                 {/* photo */}
                                 <div className="relative z-0 mx-auto -mb-10 grid h-40 w-40 place-items-center overflow-hidden rounded-full bg-white shadow-[0_20px_50px_rgba(15,23,42,0.18)]">
-                                    <img src={t.photo} alt={t.name} className="h-full w-full object-cover" />
+                                    {/* ✅ stretch fit frame: object-fill */}
+                                    <img
+                                        src={t.photo}
+                                        alt={t.name}
+                                        className="h-full w-full object-fill"
+                                        loading="lazy"
+                                    />
                                 </div>
 
                                 {/* card */}
-                                <div className="relative flex h-[380px] w-[325px] flex-col overflow-hidden rounded-2xl bg-gradient-to-b from-sky-400 via-cyan-400 to-emerald-300 p-6 shadow-[0_22px_70px_rgba(15,23,42,0.18)]">
+                                <div className="relative flex h-[380px] w-[325px] flex-col overflow-hidden rounded-2xl bg-gradient-to-b from-blue-400 via-blue-500 to-blue-800 p-6 shadow-[0_22px_70px_rgba(15,23,42,0.18)]">
                                     {/* soft shapes */}
                                     <div className="pointer-events-none absolute inset-0">
                                         <div className="bottom-[-80px] absolute -left-10 h-[220px] w-[220px] rounded-full bg-white/10" />
@@ -248,9 +242,7 @@ export default function MasterTeacherSection() {
                                     <div className="relative">
                                         <div className="text-center">
                                             <div className="text-lg font-extrabold text-white">{t.name}</div>
-                                            <div className="mt-1 text-sm font-semibold text-white/90">
-                                                {t.title}
-                                            </div>
+                                            <div className="mt-1 text-sm font-semibold text-white/90">{t.title}</div>
                                             <div className="mx-auto mt-4 h-px w-4/5 border-t border-dashed border-white/60" />
                                         </div>
 

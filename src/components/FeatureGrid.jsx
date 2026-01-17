@@ -185,11 +185,11 @@ export default function FeatureGrid() {
             <div className="pointer-events-none absolute inset-0">
                 {/* kiri (2 lingkaran full) */}
                 <div
-                    className="bg-[#BFF2E2]/95 absolute -left-16 bottom-[60px] h-[260px] w-[260px] rounded-full"
+                    className="bg-[#93C5f0]/55 absolute -left-16 bottom-[60px] h-[260px] w-[260px] rounded-full"
                     style={decorStyleLeft(1)}
                 />
                 <div
-                    className="bg-[#61CBD0]/65 absolute -left-16 bottom-[30px] h-[140px] w-[140px] rounded-full"
+                    className="bg-[#93c5f9]/95 absolute -left-16 bottom-[30px] h-[140px] w-[140px] rounded-full"
                     style={decorStyleLeft(0.75)}
                 />
 
@@ -204,16 +204,25 @@ export default function FeatureGrid() {
                         cx="260"
                         cy="260"
                         r="180"
-                        stroke="rgba(97,203,208,0.55)"
+                        stroke="rgba(37,99,235,0.35)" 
                         strokeWidth="3"
                         strokeDasharray="6 10"
                     />
                 </svg>
             </div>
-
+            <div className="pointer-events-none absolute inset-0">
+                <div
+                    className="bg-[#93c5f9]/45 absolute right-10 top-80 h-[520px] w-[520px] rounded-full blur-[130px]"
+                    style={decorStyleLeft(0.55)}
+                />
+                <div
+                    className="bg-[#A9D4F2]/35 absolute bottom-0 right-10 h-[520px] w-[520px] rounded-full blur-[140px]"
+                    style={decorStyleRight(0.55)}
+                />
+            </div>
             <div className="relative z-10 mx-auto max-w-6xl px-4">
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] p-6 shadow-[0_0px_80px_rgba(15,23,42,0.18)]">
-                    <h2 className="mb-5 text-xl font-bold tracking-tight text-slate-900">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-bl from-blue-300 via-blue-400 to-blue-800 p-6 shadow-[0_0px_80px_rgba(15,23,42,0.18)]">
+                    <h2 className="mb-5 text-xl font-bold tracking-tight text-white">
                         ✨ Program dan Fitur Unggulan
                     </h2>
 

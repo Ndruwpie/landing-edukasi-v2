@@ -1,18 +1,28 @@
 ﻿import { useEffect, useMemo, useState } from "react";
 
+// ====== PILIH SALAH SATU CARA PATH GAMBAR ======
+
+// (A) REKOMENDASI: taruh gambar di: src/assets/hero/
+// contoh: src/assets/hero/slide-1.jpg dst
+import slide1 from "../assets/hero/slide-1.jpg";
+import slide2 from "../assets/hero/slide-2.jpg";
+import slide3 from "../assets/hero/slide-3.jpg";
+
+/*
+// (B) ALTERNATIF: taruh gambar di: public/hero/
+// contoh: public/hero/slide-1.jpg dst
+// lalu pakai path string seperti ini:
 const slides = [
-    {
-        image:
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-        image:
-            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-        image:
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
-    },
+  { image: "/hero/slide-1.jpg" },
+  { image: "/hero/slide-2.jpg" },
+  { image: "/hero/slide-3.jpg" },
+];
+*/
+
+const slides = [
+    { image: slide1 },
+    { image: slide2 },
+    { image: slide3 },
 ];
 
 const mod = (n, m) => ((n % m) + m) % m;
@@ -57,14 +67,12 @@ export default function HeroSlider() {
     const fade = 1 - sp;
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] p-10">
-
+        <section className="relative overflow-hidden bg-gradient-to-br from-blue-100 via-blue-100 to-blue-200 p-10">
             {/* === DECORATIVE CIRCLES === */}
             <div className="pointer-events-none absolute inset-0">
-
                 {/* KIRI BESAR */}
                 <div
-                    className="bg-[#61CBD0]/35 absolute -left-56 top-10 h-[520px] w-[520px] rounded-full"
+                    className="bg-[#93C5f0]/55 absolute -left-56 top-10 h-[520px] w-[520px] rounded-full"
                     style={{
                         transform: `translateX(${leftX}px) scale(${scale})`,
                         opacity: fade,
@@ -74,7 +82,7 @@ export default function HeroSlider() {
 
                 {/* KIRI KECIL */}
                 <div
-                    className="bg-[#BFF2E2]/55 absolute -left-40 top-36 h-[420px] w-[420px] rounded-full"
+                    className="bg-[#93c5f9]/95 absolute -left-10 top-56 h-[450px] w-[450px] rounded-full"
                     style={{
                         transform: `translateX(${leftX * 0.7}px) scale(${scale})`,
                         opacity: fade,
@@ -107,7 +115,8 @@ export default function HeroSlider() {
                         cx="280"
                         cy="280"
                         r="200"
-                        stroke="rgba(97,203,208,0.55)"
+                        stroke="rgba(37,99,235,0.35)"    // Tailwind blue-600
+
                         strokeWidth="3"
                         strokeDasharray="7 11"
                     />
@@ -126,7 +135,6 @@ export default function HeroSlider() {
                     onMouseLeave={() => setPaused(false)}
                 >
                     <div className="relative h-[260px] md:h-[340px] lg:h-[420px]">
-
                         {/* PREV */}
                         <div className="-translate-y-1/2 -translate-x-[14%] scale-[0.9] absolute left-0 top-1/2 z-10 h-full w-[280px] opacity-60 md:w-[820px]">
                             <SlideCard slide={trio.prev} muted />
@@ -153,8 +161,9 @@ export default function HeroSlider() {
                                     onClick={() => setIndex(i)}
                                     className={[
                                         "h-2 rounded-full transition-all",
-                                        active ? "w-8 bg-cyan-300" : "w-2 bg-white/50",
+                                        active ? "w-8 bg-[#93C5f0]/100" : "w-2 bg-white/50",
                                     ].join(" ")}
+                                    aria-label={`Slide ${i + 1}`}
                                 />
                             );
                         })}
@@ -166,7 +175,7 @@ export default function HeroSlider() {
             <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[12px]">
                 <div className="absolute inset-x-0 bottom-0 h-px bg-white/35" />
                 <div
-                    className="absolute bottom-0 right-0 h-[12px] rounded-full bg-gradient-to-r from-sky-400 via-cyan-400 to-emerald-300"
+                    className="absolute bottom-0 right-0 h-[12px] rounded-full bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500"
                     style={{
                         width: "100%",
                         transformOrigin: "right",
@@ -190,7 +199,8 @@ function SlideCard({ slide, muted = false }) {
             <img
                 src={slide.image}
                 alt="Hero Slide"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-fill"
+                loading="lazy"
             />
 
             <div
@@ -203,9 +213,7 @@ function SlideCard({ slide, muted = false }) {
             />
 
             <div className="absolute bottom-0 left-0 right-0 p-5 text-white md:p-7">
-                <h3 className="text-lg font-semibold leading-snug md:text-2xl">
-                    Program Belajar Terbaik untuk Masa Depanmu
-                </h3>
+
             </div>
         </article>
     );

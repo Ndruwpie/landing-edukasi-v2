@@ -21,7 +21,7 @@ function LandingPage() {
                 <CourseSection />
             </section>
 
-            <section className="relative bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] pt-10">
+            <section className="relative bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 pt-10">
                 <div className="-translate-y-1/2 absolute left-0 right-0 top-0 z-30">
                     <VoucherBanner />
                 </div>

@@ -3,7 +3,7 @@
         <nav
             className="
         sticky top-0 z-50 w-full
-        bg-gradient-to-r from-sky-400 via-cyan-400 to-emerald-300
+        bg-gradient-to-r from-blue-400 via-blue-500 to-blue-800
         text-slate-800
         backdrop-blur-xl"
         >
@@ -19,21 +19,21 @@
                 <div className="flex shrink-0 items-center gap-3">
                     {/* icon placeholder */}
                     <div className="grid h-9 w-9 place-items-center rounded-xl bg-white shadow-md">
-                        <span className="font-black text-sky-500">D</span>
+                        <span className="font-white text-sky-500">D</span>
                     </div>
 
                     <div className="leading-tight">
-                        <div className="text-sm font-bold tracking-wide text-slate-800">
+                        <div className="text-sm font-bold tracking-wide text-white">
                             Edu Platform
                         </div>
-                        <div className="-mt-0.5 text-[11px] text-slate-600">
+                        <div className="-mt-0.5 text-white text-[11px]">
                             By Demonster
                         </div>
                     </div>
                 </div>
 
                 {/* MENU */}
-                <ul className="hidden items-center gap-6 text-sm font-semibold text-slate-700 md:flex">
+                <ul className="hidden items-center gap-6 text-sm font-semibold text-white md:flex">
                     <NavItem label="Instansi" />
                     <NavItem label="SA Pro" />
                     <NavItem label="DigiStamp" />

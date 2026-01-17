@@ -58,7 +58,7 @@ export default function PricingSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative overflow-hidden bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] p-10"
+            className="relative overflow-hidden bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 p-10"
         >
             {/* HALF CIRCLE BOTTOM */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0">
@@ -81,7 +81,7 @@ export default function PricingSection() {
 
             <div className="relative z-10 mx-auto max-w-6xl px-4">
                 {/* CONTAINER ROUNDED */}
-                <div className="rounded-2xl bg-gradient-to-r from-sky-400 via-cyan-400 to-emerald-300 p-6">
+                <div className="rounded-2xl bg-gradient-to-b from-blue-400 via-blue-500 to-blue-800 p-6">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
                         {/* LEFT INFO */}
                         <div className="flex flex-col justify-between text-white">

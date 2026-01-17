@@ -217,15 +217,15 @@ export default function CourseSection() {
             {/* DECOR */}
             <div className="pointer-events-none absolute inset-0">
                 <div
-                    className="bottom-[-120px] absolute -right-32 h-[420px] w-[420px] rounded-full bg-[#BFF2E2] opacity-95"
+                    className="bottom-[-120px] bg-[#93C5FD]/25 absolute -right-32 h-[420px] w-[420px] rounded-full opacity-95"
                     style={decorStyleRight(1)}
                 />
                 <div
-                    className="absolute -right-20 bottom-[160px] h-[190px] w-[190px] rounded-full bg-[#61CBD0] opacity-60"
+                    className="bg-[#93c5f9]/95 absolute -right-20 bottom-[160px] h-[190px] w-[190px] rounded-full opacity-60"
                     style={decorStyleRight(0.8)}
                 />
                 <div
-                    className="absolute -left-28 top-[50px] h-[320px] w-[320px] rounded-full bg-[#A9D4F2] opacity-55"
+                    className="bg-[#93C5f0]/55 absolute -left-28 top-[50px] h-[320px] w-[320px] rounded-full opacity-55"
                     style={decorStyleLeft(1)}
                 />
                 <svg
@@ -238,7 +238,7 @@ export default function CourseSection() {
                         cx="280"
                         cy="280"
                         r="210"
-                        stroke="rgba(97,203,208,0.55)"
+                        stroke="rgba(37,99,235,0.35)" 
                         strokeWidth="3"
                         strokeDasharray="6 10"
                     />
@@ -248,7 +248,7 @@ export default function CourseSection() {
             {/* glow */}
             <div className="pointer-events-none absolute inset-0">
                 <div
-                    className="bg-[#BFF2E2]/35 absolute left-10 top-10 h-[520px] w-[520px] rounded-full blur-[130px]"
+                    className="bg-[#93c5f9]/45 absolute left-10 top-10 h-[520px] w-[520px] rounded-full blur-[130px]"
                     style={decorStyleLeft(0.55)}
                 />
                 <div
@@ -258,9 +258,9 @@ export default function CourseSection() {
             </div>
 
             <div className="relative z-10 mx-auto max-w-6xl px-4">
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#CFF9EA] via-[#DFF3FF] to-[#C7E6FF] p-8 shadow-[0_30px_90px_rgba(15,23,42,0.18)]">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-400 via-blue-500 to-blue-800 p-8 shadow-[0_30px_90px_rgba(15,23,42,0.18)]">
                     <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-                        <div className="absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#7FF5D4] to-[#9EE8FF] opacity-50 blur-3xl" />
+                        <div className="from-[#93C5f0]/55 absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-b to-[#9EE8FF] opacity-50 blur-3xl" />
                         <div className="absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#93C5FD] to-[#67E8F9] opacity-50 blur-3xl" />
                     </div>
 
